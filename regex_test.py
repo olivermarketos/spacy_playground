@@ -11,4 +11,6 @@ for genotype in genotype_list.split():
         print("Found error in:", genotype)
         print("Suggested fix:", re.sub("D::","\u0394::",genotype))
 
-#print(re.sub("D::","\u0394",genotype_list))
+# Output:
+# Found error in: ase1D::NatMx6
+# Suggested fix: ase1Δ::NatMx6
