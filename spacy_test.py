@@ -22,3 +22,12 @@ for match_id, start, end in matches:
     print("Match found:", doc[start:end].text)
     print("Suggested fix:", re.sub("D::","\u0394::",doc[start:end].text))
 
+# output:
+#   total matches found: 2
+
+#   Match found: ase1D::NatMx6
+#   Suggested fix: ase1Δ::NatMx6
+
+#   Match found: test2D::test2
+#   Suggested fix: test2Δ::test2
+
