@@ -4,17 +4,17 @@ from spacy.matcher import Matcher
 
 # Load a pipeline and create the nlp object
 nlp = spacy.load("en_core_web_sm")
-doc = nlp("ase1\u0394::NatMx6 ase1D::NatMx6 leu1byr1::ura4")
+doc = nlp("ase1\u0394::NatMx6 ase1D::NatMx6 test0::test0 test1::Dtest1 test2D::test2 test3Dtest3")
 
 # Initialize the matcher with the shared vocab
 matcher = Matcher(nlp.vocab)
 
 # Add the pattern to the matcher
-pattern = [{"TEXT":{"REGEX": "D::"}}]
+pattern = [{"TEXT":{"REGEX": "D::"}}]   # can overload this with all the rules we're looking for
 matcher.add("GENOTYPE_PATTERN", [pattern])
 
 # Call the matcher on the doc
-matches = matcher(doc)
+matches = matcher(doc) # an object containing all the tokens in the string that match our patter
 
 print("total matches found:", len(matches))
 
